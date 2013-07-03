@@ -1,0 +1,446 @@
+@orange:                          #FF7700;
+@yellow:                          #FFCC00;
+@yellowLight:                     lighten(@yellow, 10%);
+@yellowLighter:                   lighten(@yellow, 43%);
+
+@linkColor:                       #454545;
+@linkColorInternal:               @orange;
+@btnPrimaryBackground:            #FF6600;
+@btnPrimaryBackgroundHighlight:   darken(@btnPrimaryBackground, 10%);
+
+@borderColor:                     #DDDDDD;
+
+@iconSpritePath:                  "/packages/bootstrapless/build/img/glyphicons-halflings.png";
+@iconWhiteSpritePath:             "/packages/bootstrapless/build/img/glyphicons-halflings-white.png";
+
+//@baseFontFamily: Arial, Helvetica, sans-serif;
+//@serifFontFamily: "droid-serif", serif;
+//@sansFontFamily: "museo-sans", Arial, Helvetica, sans-serif;
+
+@sidebarLinkColor:                #CCCCCC;
+@sidebarBackground:               #454545;
+
+main {
+  display: block;
+}
+
+time {
+  color: @grayLight;
+}
+
+.header {
+  margin-top: 0;
+}
+
+// Added mixins
+
+.curly-box-shadow {
+  position: relative;
+  &:before,
+  &:after {
+    position: absolute;
+    bottom: 18px;
+    left: 5px;
+    z-index: -1;
+    width: 80%;
+    height: 20%;
+    content: "";
+    .rotate(-2deg);
+    .box-shadow(0 15px 10px rgba(0, 0, 0, 0.7));
+  }
+  &:after {
+    right: 5px;
+    left: auto;
+    .rotate(2deg);
+  }
+}
+
+.text-shadow(@shadow: 0 -1px 1px rgba(0, 0, 0, .5)) {
+  text-shadow: @shadow;
+  -webkit-text-shadow: @shadow;
+  -moz-text-shadow: @shadow;
+}
+
+.linkInternal(@color: @linkColorInternal, @hoverColor: darken(@linkColorInternal, 10%)) {
+  color: @color;
+  .transition(color 200ms ease-in);
+
+  &:hover {
+    color: @hoverColor;
+  }
+}
+
+// Reusable classes (should put stuff from core.css here)
+
+.fill {
+  position: relative;
+  min-height: 100%;
+}
+
+.filler::after {
+  background-color: inherit;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: inherit;
+  z-index: -1;  
+}
+
+.block {
+  display: block;
+}
+
+a.block {
+  position: relative;
+  display: block;
+  margin: 0 -10px;
+  padding: 10px;
+  border: solid 1px transparent;
+  border-radius: 5px;
+
+  .clearfix();
+}
+
+a.block:hover {
+  text-decoration: none;
+  background-color: lighten( @orange, 45%);
+}
+
+a[rel="internal"],
+a[rel="external"] {
+  .linkInternal();
+}
+
+// Bootstrap overrides
+
+.btn {
+  .border-radius(3px);
+  .box-shadow(0 1px 0 rgba(0, 0, 0, 0.1));
+}
+
+// Type
+
+h1, h2, h3, h4 {
+  font-family: @sansFontFamily;
+}
+
+.lead {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+// Layout
+
+#ribbon {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  width: 149px;
+  height: 149px;
+  text-indent: -9999em;
+  background: url('/images/github_ribbon.png');
+  z-index: 9999;
+}
+
+#sidebar-btn {
+  .navbar .btn-navbar;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+#sidebar-btn .icon-bar {
+  .navbar .btn-navbar .icon-bar;
+}
+
+#header .navbar-inner {
+  position: relative;
+  //background: @topmenuBackgroundColor;
+  //#gradient > .vertical( darken( @topmenuBackgroundColor, 10% ), @topmenuBackgroundColor );
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#content-nav > li > a {
+  position: relative;
+  padding-top: 30px;
+  font-family: @sansFontFamily;
+  font-size: 20px;
+  font-weight: bold;
+  .linkInternal(#454545, @linkColorInternal);
+}
+
+#content-nav > li.active > a {
+  padding-bottom: -5px;
+  color: @white;
+  background-color: @linkColorInternal;
+  .text-shadow(-1px -1px 0 @gray);
+}
+
+#header .home {
+  display: block;
+  width: 24px;
+  height: 24px;
+  padding: 30px 15px 7px 15px;
+  text-indent: -9999em;
+  background: url('/images/home.png') center 27px no-repeat;
+}
+
+#page {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+}
+
+.masthead .lead {
+  margin-top: 10%;
+  margin-bottom: 0;
+}
+
+.masthead h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 60px;
+}
+
+article {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.tag.selected {
+  background-color: #121212;
+}
+
+#icons-home i {
+  float: left;
+  margin: 0 10px 10px 0;
+  width: 64px;
+  height: 64px;
+  background-image: url('/images/sprite_home.png');
+  background-position: 0 0;
+}
+
+#icons-home i.icon-work {
+  background-position: 0 0;
+}
+
+#icons-home i.icon-method {
+  background-position: 0 -64px;
+}
+
+#icons-home i.icon-lab {
+  background-position: 0 -128px;
+}
+
+#icons-home i.icon-about {
+  background-position: 0 -192px;
+}
+
+#icons-home i.icon-contact {
+  background-position: 0 -256px;
+}
+
+.page-home .masthead {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  min-height: 480px;
+  margin-bottom: 20px;
+  background: url('/images/bg_home.jpg') center center no-repeat;
+  background-size: cover;
+
+  h1,
+  .lead {
+    padding: 0 5px;
+    background-color: #121212;
+    color: #FFFFFF;
+    .opacity(70);
+    //color: @white;
+    //text-shadow: -3px 0 #171717, 0 3px #171717, 3px 0 #171717, 0 -3px #171717;
+  }
+}
+
+.page-expertise h5,
+.page-expertise ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.page-work .project {
+  padding: 10px;
+  border: solid 1px #D8D8D8;
+  background-color: @yellowLighter;
+  .border-radius(2px);
+  .curly-box-shadow();
+
+  img {
+    position: relative;
+    max-width: none;
+    width: 268px;
+    margin: -10px -10px 15px -10px;
+  }
+}
+
+#footer {
+  padding-top: 30px;
+  margin-top: 20px;
+  margin-bottom: -1000px;
+  padding-bottom: 1000px;
+  border-top: 1px solid #E5E5E5;
+  background-color: whiteSmoke;
+  color: @grayLight;
+
+  section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+#footer a {
+  color: inherit;
+}
+
+#footer .social .btn {
+  width: 34px;
+  text-align: center;
+  margin: 10px 10px 10px 0;
+  padding: 0px;
+}
+
+#footer .social i {
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  line-height: 32px;
+  background: url('/images/sprite_social.png') 0 0 no-repeat;
+  .opacity(67);
+  &:hover {
+    .opacity(100);
+  }
+  &.icon-linkedin {
+    background-position: 0 -32px;
+  }
+  &.icon-twitter {
+    background-position: 0 -64px;
+  }
+
+}
+
+.navbar .btn-navbar, .navbar .btn-navbar:hover, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
+  float: left;
+}
+.navbar .btn-navbar {
+  .buttonBackground(@orange, darken(@orange, 5%));
+}
+
+/* PACKAGE OVERRIDES */
+
+.page-blog article {
+  //text-align: justify;
+}
+
+.page-blog .teaser {
+  padding: 10px;
+  border: solid 1px transparent;
+  .border-radius(2px);
+}
+
+.page-blog .teaser:hover {
+  background-color: @yellowLighter;
+  border-color: @grayLight;
+}
+
+/* MASONRY */
+
+.masonry {
+  margin-top: 20px;
+}
+
+.masonry .brick {
+  width: 270px;
+  display: block;
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+
+/* TRANSITIONS */
+
+.sliding .page {
+  .transition( all 500ms cubic-bezier(0.51, 0, 0.6, 1) 0ms);
+}
+
+.sliding .current-page { left: 0; }
+.sliding .next-page { left: 100%; }
+
+.transitioning.sliding {
+  .current-page { left: -100%; }
+  .next-page { left: 0; }
+}
+
+.fading .page {
+  .transition( all 250ms ease-in );
+}
+
+.transitioning.fading {
+  .current-page {
+    .opacity(0);
+  }
+  .next-page {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 979px) {
+  .masthead {
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 979px) {
+  #header {
+    display: none;
+  }
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+  #header .nav > li {
+    padding: 0;
+  }
+
+  #tools-nav {
+    display: none;
+  }
+  .masthead h1 {
+    margin-top: 10px;
+  }
+  #page {
+    padding-top: 60px;
+  }
+  .span3 {
+    width: 350px;
+  }
+}
+
+@media (max-width: 767px) {
+  .span3 {
+    width: auto;
+  }
+  .page,
+  footer {
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #footer .pull-right {
+    float: none;
+  }
+}

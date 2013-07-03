@@ -1,0 +1,26 @@
+{
+  "meteor": {
+    "git": "https://github.com/meteor/meteor.git",
+    "branch": "master"
+  },
+  "packages": {
+    "c2o-core": {
+      "path": "/usr/local/var/www/meteor/packages/c2o-core"
+    },
+    "c2o-module": {
+      "path": "/usr/local/var/www/meteor/packages/c2o-module"
+    },
+    "c2o-tracker": {
+      "path": "/usr/local/var/www/meteor/packages/c2o-tracker"
+    },
+    "c2o-content": {
+      "path": "/usr/local/var/www/meteor/packages/c2o-content"
+    },
+    "c2o-tumblrfeed": {
+      "path": "/usr/local/var/www/meteor/packages/c2o-tumblrfeed"
+    },
+    "c2o-development": {
+      "path": "/usr/local/var/www/meteor/packages/c2o-development"
+    }
+  }
+}

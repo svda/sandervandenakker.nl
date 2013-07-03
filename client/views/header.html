@@ -1,0 +1,21 @@
+<template name="header">
+  {{#if showNavbar}}
+  <header id="header" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <ul id="content-nav" class="nav" role="navigation">
+          <li><a class="home" href="/">Home</a></li>
+          {{#each menu 'topmenu'}}
+          <li{{#if active slug}} class="active"{{/if}}><a href="{{slug}}">{{name}}</a></li>
+          {{/each}}
+        </ul>
+        <ul id="tools-nav" class="nav pull-right" role="navigation">
+          {{#if show_login}}
+            <li>{{loginButtons align="right"}}</li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </header>
+  {{/if}}
+</template>

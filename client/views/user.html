@@ -1,0 +1,38 @@
+<template name="account">
+  {{#if currentUser}}
+    <a id="link-account" class="dropdown-toggle" data-toggle="dropdown" href="#">{{currentUser.username}}</a>
+    <ul class="dropdown-menu">
+      <li class="nav-header">My account</li>
+      <li><a id="settings-link" href="#">Settings</a></li>
+      <li><a id="logout-link" href="#user/logout">Log out</a></li>
+    </ul>
+  {{else}}
+    <a id="login-link" data-toggle="modal" href="#user/login">Customer Portal</a>
+  {{/if}}
+</template>
+
+<template name="login2">
+  <div id="login-modal" class="modal hide fade">
+    <div class="modal-header">
+      <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+      <h3>Customer Portal login</h3>
+    </div>
+    <div class="modal-body">
+      {{#if error}}
+        <div class="alert alert-error">
+          <a class="close" data-dismiss="alert" aria-hidden="true">×</a>
+          {{error}}
+        </div>
+      {{/if}}
+      <input name="csrfToken" type="hidden" value="LOGIN">
+      <label>Username or emailadres</label>
+      <input id="login-username" type="text" class="span2 entry focus">
+      <label>Password</label>
+      <input id="login-password" type="password" class="span2 entry">
+    </div>
+    <div class="modal-footer">
+      <button id="login-button" class="btn btn-primary">Log in</button>
+    </div>
+  </div>
+</template>
+

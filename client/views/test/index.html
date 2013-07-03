@@ -1,0 +1,25 @@
+<template name="test">
+  <div class="container">
+    <h1>REST tests</h1>
+    <div>
+      <form action="/api/v1/test/get" method="GET">
+        <input name="testme"/> <button class="btn btn-primary" type="submit">Get</button>
+      </form>
+    </div>
+    <div>
+      <form action="/api/v1/test/post" method="POST">
+        <input name="testme"/> <button class="btn btn-primary" type="submit">Post</button>
+      </form>
+    </div>
+    <div>
+      <form action="/api/v1/test/put" method="PUT">
+        <input name="testme"/> <button class="btn btn-primary" type="submit">Put</button>
+      </form>
+    </div>
+    <div>
+      <form action="/api/v1/test/delete" method="DELETE">
+        <input name="testme"/> <button class="btn btn-primary" type="submit">Delete</button>
+      </form>
+    </div>
+  </div>
+</template>
