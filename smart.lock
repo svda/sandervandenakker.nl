@@ -7,42 +7,51 @@
   "dependencies": {
     "basePackages": {
       "c2o-core": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-core"
-      },
-      "c2o-tracker": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-tracker"
-      },
-      "c2o-content": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-content"
-      },
-      "c2o-tumblrfeed": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-tumblrfeed"
+        "git": "https://github.com/click2open/c2o-core.git",
+        "branch": "master"
       },
       "c2o-module": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-module"
+        "git": "https://github.com/click2open/c2o-module.git",
+        "branch": "master"
       },
-      "c2o-development": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-development"
+      "c2o-tracker": {
+        "git": "https://github.com/click2open/c2o-tracker.git",
+        "branch": "master"
+      },
+      "c2o-content": {
+        "git": "https://github.com/click2open/c2o-content.git",
+        "branch": "master"
+      },
+      "c2o-tumblrfeed": {
+        "git": "https://github.com/click2open/c2o-tumblrfeed.git",
+        "branch": "master"
       }
     },
     "packages": {
       "c2o-core": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-core"
-      },
-      "c2o-tracker": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-tracker"
-      },
-      "c2o-content": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-content"
-      },
-      "c2o-tumblrfeed": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-tumblrfeed"
+        "git": "https://github.com/click2open/c2o-core.git",
+        "branch": "master",
+        "commit": "392f459a4a8f33fac5e546a8411038dfbf3d0a6c"
       },
       "c2o-module": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-module"
+        "git": "https://github.com/click2open/c2o-module.git",
+        "branch": "master",
+        "commit": "fcf660d0f43facedc452df2dc766bb4249a07eac"
       },
-      "c2o-development": {
-        "path": "../../../../../usr/local/var/www/meteor/packages/c2o-development"
+      "c2o-tracker": {
+        "git": "https://github.com/click2open/c2o-tracker.git",
+        "branch": "master",
+        "commit": "9b91646587e3efc8b5c9e9d8f746da1b58a71e3b"
+      },
+      "c2o-content": {
+        "git": "https://github.com/click2open/c2o-content.git",
+        "branch": "master",
+        "commit": "89c9f766140748f150805028c08a291aaa9e640a"
+      },
+      "c2o-tumblrfeed": {
+        "git": "https://github.com/click2open/c2o-tumblrfeed.git",
+        "branch": "master",
+        "commit": "e2065742fb06da18db314ac6ad50756204bdccba"
       },
       "router": {
         "git": "https://github.com/tmeasday/meteor-router.git",
