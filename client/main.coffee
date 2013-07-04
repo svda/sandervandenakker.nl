@@ -15,7 +15,7 @@ Template.main.events =
   'click #sidebar-btn': (e) ->
     c2o.Sidebar.toggle()
   'click #page': (e) ->
-    if( c2o.Sidebar.open and( typeof e.target.id == 'undefined' or ( e.target.id != 'sidebar-btn' and e.target.parentNode.id != 'sidebar-btn' ) ) )
+    if( ( typeof e.target.id == 'undefined' or ( e.target.id != 'sidebar-btn' and e.target.parentNode.id != 'sidebar-btn' ) ) )
       c2o.Sidebar.close()
 
 Meteor.startup ->
