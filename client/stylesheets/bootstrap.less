@@ -244,7 +244,7 @@ article {
   background-position: 0 -256px;
 }
 
-.page-home .masthead {
+.package-home .masthead {
   position: relative;
   overflow: hidden;
   max-width: 100%;
@@ -264,13 +264,13 @@ article {
   }
 }
 
-.page-expertise h5,
-.page-expertise ul {
+.package-expertise h5,
+.package-expertise ul {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.page-work .project {
+.package-work .project {
   padding: 10px;
   border: solid 1px #D8D8D8;
   background-color: @yellowLighter;
@@ -339,19 +339,26 @@ article {
 
 /* PACKAGE OVERRIDES */
 
-.page-blog article {
-  //text-align: justify;
-}
+#main.package-tumblrFeed {
+  background: #121212 url('/images/tumblrfeed/background.jpg');
 
-.page-blog .teaser {
-  padding: 10px;
-  border: solid 1px transparent;
-  .border-radius(2px);
-}
+  .post {
+    margin: 0 0 20px 0;
+    padding: 10px;
+    background-color: #F4F4F4;
+    .border-radius(10px);
+  }
 
-.page-blog .teaser:hover {
-  background-color: @yellowLighter;
-  border-color: @grayLight;
+  .post.photo {
+    .caption {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  }
+
+  a.post:hover {
+    background-color: @yellowLighter;
+  }
 }
 
 /* MASONRY */
