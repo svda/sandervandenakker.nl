@@ -1,3 +1,5 @@
+@grayLightest:                    #F4F4F4;
+
 @orange:                          #FF7700;
 @yellow:                          #FFCC00;
 @yellowLight:                     lighten(@yellow, 10%);
@@ -97,7 +99,6 @@ a.block {
   display: block;
   margin: 0 -10px;
   padding: 10px;
-  border: solid 1px transparent;
   border-radius: 5px;
 
   .clearfix();
@@ -204,11 +205,6 @@ h1, h2, h3, h4 {
   font-size: 48px;
   font-weight: 700;
   line-height: 60px;
-}
-
-article {
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .tag.selected {
@@ -346,7 +342,11 @@ article {
     margin: 0 0 20px 0;
     padding: 10px;
     background-color: #F4F4F4;
-    .border-radius(10px);
+    .border-radius(5px);
+
+    a {
+      color: @orange;
+    }
   }
 
   .post.photo {
@@ -358,6 +358,14 @@ article {
 
   a.post:hover {
     background-color: @yellowLighter;
+  }
+
+  .post-footer {
+    margin: 10px -10px -10px -10px;
+    padding: 5px;
+    background-color: @grayLighter;
+    border-top: solid 1px darken(@grayLighter, 10%);
+    .border-bottom-radius(10px);
   }
 }
 
