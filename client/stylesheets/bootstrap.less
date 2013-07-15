@@ -1,33 +1,30 @@
-@grayLightest:                    #F4F4F4;
+@gray-lightest:         #F4F4F4;
 
-@orange:                          #FF7700;
-@yellow:                          #FFCC00;
-@yellowLight:                     lighten(@yellow, 10%);
-@yellowLighter:                   lighten(@yellow, 43%);
+@brand-primary:         #FF7700;
 
-@linkColor:                       #454545;
-@linkColorInternal:               @orange;
-@btnPrimaryBackground:            #FF6600;
-@btnPrimaryBackgroundHighlight:   darken(@btnPrimaryBackground, 10%);
+@orange:                #FF7700;
+@yellow:                #FFCC00;
+@yellow-light:          lighten(@yellow, 10%);
+@yellow-lighter:        lighten(@yellow, 43%);
 
-@borderColor:                     #DDDDDD;
+@link-color:            #454545;
+@link-color-internal:   @orange;
+@btn-primary-bg:        #FF6600;
+@btn-primary-bg-hl:     darken(@btn-primary-bg, 10%);
 
-@iconSpritePath:                  "/packages/bootstrapless/build/img/glyphicons-halflings.png";
-@iconWhiteSpritePath:             "/packages/bootstrapless/build/img/glyphicons-halflings-white.png";
+@sidebar-color:         #CCCCCC;
+@sidebar-bg:            #454545;
 
-//@baseFontFamily: Arial, Helvetica, sans-serif;
-//@serifFontFamily: "droid-serif", serif;
-//@sansFontFamily: "museo-sans", Arial, Helvetica, sans-serif;
-
-@sidebarLinkColor:                #CCCCCC;
-@sidebarBackground:               #454545;
+img {
+  max-width: 100%;
+}
 
 main {
   display: block;
 }
 
 time {
-  color: @grayLight;
+  color: @gray-light;
 }
 
 .header {
@@ -63,12 +60,28 @@ time {
   -moz-text-shadow: @shadow;
 }
 
-.linkInternal(@color: @linkColorInternal, @hoverColor: darken(@linkColorInternal, 10%)) {
+.linkInternal(@color: @link-color-internal, @hover-color: darken(@link-color-internal, 10%)) {
   color: @color;
   .transition(color 200ms ease-in);
 
   &:hover {
-    color: @hoverColor;
+    color: @hover-color;
+  }
+}
+
+.navbar-fade(@color) {
+  background-color: transparent;
+  .navbar-inner {
+
+    background-color: @color;
+  }
+  &:after {
+    content: " ";
+    min-width: 100%;
+    height: 50px;
+    margin-left: -20px;
+    margin-right: -20px;
+    #gradient > .vertical(rgba(red(@color),green(@color),blue(@color),1), 0%, rgba(red(@color),green(@color),blue(@color),0), 100%);
   }
 }
 
@@ -117,14 +130,20 @@ a[rel="external"] {
 // Bootstrap overrides
 
 .btn {
-  .border-radius(3px);
+  border-radius: 3px;
   .box-shadow(0 1px 0 rgba(0, 0, 0, 0.1));
+}
+
+.jumbotron {
+  margin: 0;
+  padding: 0;
+  background: none;
 }
 
 // Type
 
 h1, h2, h3, h4 {
-  font-family: @sansFontFamily;
+  font-family: @font-family-sans-serif;
 }
 
 .lead {
@@ -155,39 +174,46 @@ h1, h2, h3, h4 {
 }
 
 #sidebar-btn .icon-bar {
-  .navbar .btn-navbar .icon-bar;
+  //.navbar .btn-navbar .icon-bar;
 }
 
-#header .navbar-inner {
-  position: relative;
-  //background: @topmenuBackgroundColor;
-  //#gradient > .vertical( darken( @topmenuBackgroundColor, 10% ), @topmenuBackgroundColor );
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+#header {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #FFF;
 }
 
-#content-nav > li > a {
-  position: relative;
-  padding-top: 30px;
-  font-family: @sansFontFamily;
-  font-size: 20px;
-  font-weight: bold;
-  .linkInternal(#454545, @linkColorInternal);
+#content-nav {
+  > li {
+    float: left;
+    > a {
+      position: relative;
+      padding-top: 30px;
+      font-family: @font-family-sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      .linkInternal(#454545, @link-color-internal);
+      .border-bottom-radius(5px);
+    }
+    > a:hover {
+
+    }
+  }
 }
 
 #content-nav > li.active > a {
   padding-bottom: -5px;
-  color: @white;
-  background-color: @linkColorInternal;
-  .text-shadow(-1px -1px 0 @gray);
+  color: #FFF;
+  background-color: @link-color-internal;
 }
 
 #header .home {
+  content: " ";
   display: block;
   width: 24px;
-  height: 24px;
-  padding: 30px 15px 7px 15px;
+  padding: 30px 24px 0 24px;
   text-indent: -9999em;
-  background: url('/images/home.png') center 27px no-repeat;
+  background: url('/images/home.png') center 31px no-repeat;
 }
 
 #page {
@@ -240,6 +266,16 @@ h1, h2, h3, h4 {
   background-position: 0 -256px;
 }
 
+/* PACKAGE OVERRIDES */
+
+.package-method,
+.package-about,
+.package-work {
+  #header {
+    .navbar-fade(#FFF);
+  }
+}
+
 .package-home .masthead {
   position: relative;
   overflow: hidden;
@@ -254,7 +290,7 @@ h1, h2, h3, h4 {
     padding: 0 5px;
     background-color: #121212;
     color: #FFFFFF;
-    .opacity(70);
+    opacity: .7;
     //color: @white;
     //text-shadow: -3px 0 #171717, 0 3px #171717, 3px 0 #171717, 0 -3px #171717;
   }
@@ -269,8 +305,8 @@ h1, h2, h3, h4 {
 .package-work .project {
   padding: 10px;
   border: solid 1px #D8D8D8;
-  background-color: @yellowLighter;
-  .border-radius(2px);
+  background-color: @yellow-lighter;
+  border-radius: 2px;
   .curly-box-shadow();
 
   img {
@@ -281,6 +317,45 @@ h1, h2, h3, h4 {
   }
 }
 
+.package-tumblrFeed {
+  background: #121212 url('/images/tumblrfeed/background.jpg');
+
+  #header {
+    //background: none;
+  }
+
+  .post {
+    margin: 0 0 20px 0;
+    padding: 10px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+
+    a {
+      color: @orange;
+    }
+
+  }
+
+  .post.photo {
+    .caption {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  }
+
+  a.post:hover {
+    background-color: @yellow-lighter;
+  }
+
+  .post-footer {
+    margin: 10px -10px -10px -10px;
+    padding: 5px;
+    background-color: @gray-lighter;
+    border-top: solid 1px darken(@gray-lighter, 10%);
+    .border-bottom-radius(10px);
+  }
+}
+
 #footer {
   padding-top: 30px;
   margin-top: 20px;
@@ -288,7 +363,7 @@ h1, h2, h3, h4 {
   padding-bottom: 1000px;
   border-top: 1px solid #E5E5E5;
   background-color: whiteSmoke;
-  color: @grayLight;
+  color: @gray-light;
 
   section {
     padding-left: 10px;
@@ -330,43 +405,7 @@ h1, h2, h3, h4 {
   float: left;
 }
 .navbar .btn-navbar {
-  .buttonBackground(@orange, darken(@orange, 5%));
-}
-
-/* PACKAGE OVERRIDES */
-
-#main.package-tumblrFeed {
-  background: #121212 url('/images/tumblrfeed/background.jpg');
-
-  .post {
-    margin: 0 0 20px 0;
-    padding: 10px;
-    background-color: #F4F4F4;
-    .border-radius(5px);
-
-    a {
-      color: @orange;
-    }
-  }
-
-  .post.photo {
-    .caption {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-  }
-
-  a.post:hover {
-    background-color: @yellowLighter;
-  }
-
-  .post-footer {
-    margin: 10px -10px -10px -10px;
-    padding: 5px;
-    background-color: @grayLighter;
-    border-top: solid 1px darken(@grayLighter, 10%);
-    .border-bottom-radius(10px);
-  }
+  #gradient .vertical(@orange, darken(@orange, 5%));
 }
 
 /* MASONRY */

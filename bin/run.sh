@@ -1,2 +1,1 @@
-export ROOT_URL=http://www.sandervandenakker.nl
-mrt --production
+ROOT_URL=http://www.sandervandenakker.nl mrt --production
