@@ -154,23 +154,11 @@ h1, h2, h3, h4 {
 
 // Layout
 
-#ribbon {
-  position: absolute;
-  display: block;
-  top: 0;
-  right: 0;
-  width: 149px;
-  height: 149px;
-  text-indent: -9999em;
-  background: url('/images/github_ribbon.png');
-  z-index: 9999;
-}
-
 #sidebar-btn {
   .navbar .btn-navbar;
   position: absolute;
   top: 15px;
-  left: 15px;
+  left: 25px;
 }
 
 #sidebar-btn .icon-bar {
@@ -380,17 +368,20 @@ h1, h2, h3, h4 {
   text-align: center;
   margin: 10px 10px 10px 0;
   padding: 0px;
+  background-color: #FFF;
+  .transition(all .2s linear);
 }
 
 #footer .social i {
+  display: block;
   width: 32px;
   height: 32px;
   margin: 0;
   line-height: 32px;
   background: url('/images/sprite_social.png') 0 0 no-repeat;
-  .opacity(67);
+  .opacity(.67);
   &:hover {
-    .opacity(100);
+    .opacity(1);
   }
   &.icon-linkedin {
     background-position: 0 -32px;
