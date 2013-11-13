@@ -16,3 +16,6 @@ c2o-module
 c2o-content
 c2o-tumblrfeed
 moment
+standard-app-packages
+iron-router
+less

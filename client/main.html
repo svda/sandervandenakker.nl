@@ -15,7 +15,7 @@
 
 <template name="main">
   {{> sidebar}}
-  <main id="main" class="package-{{currentPage}}">
+  <main id="main" class="view-{{currentView}}">
     <div id="page">
       {{> header}}
       <a id="sidebar-btn" class="btn visible-sm" href="#sidebar">
@@ -23,7 +23,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      {{renderPage}}
+      {{renderRouter}}
       {{> footer}}
     </div>
   </main>

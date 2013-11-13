@@ -1,3 +1,5 @@
+@import "/packages/c2o-core/client/stylesheets/core.lessimport";
+
 @gray-lightest:         #F4F4F4;
 
 @brand-primary:         #FF7700;
@@ -7,31 +9,23 @@
 @yellow-light:          lighten(@yellow, 10%);
 @yellow-lighter:        lighten(@yellow, 43%);
 
-@link-color:            #454545;
-@link-color-internal:   @orange;
+@link-color:            @orange;
 @btn-primary-bg:        #FF6600;
 @btn-primary-bg-hl:     darken(@btn-primary-bg, 10%);
 
 @sidebar-color:         #CCCCCC;
 @sidebar-bg:            #454545;
 
-img {
-  max-width: 100%;
-}
+// Custom mixins
 
-main {
-  display: block;
-}
+.link(@color: @link-color, @hover-color: darken(@link-color, 10%)) {
+  color: @color;
+  .transition(color 200ms ease-in);
 
-time {
-  color: @gray-light;
+  &:hover {
+    color: @hover-color;
+  }
 }
-
-.header {
-  margin-top: 0;
-}
-
-// Added mixins
 
 .curly-box-shadow {
   position: relative;
@@ -54,54 +48,7 @@ time {
   }
 }
 
-.text-shadow(@shadow: 0 -1px 1px rgba(0, 0, 0, .5)) {
-  text-shadow: @shadow;
-  -webkit-text-shadow: @shadow;
-  -moz-text-shadow: @shadow;
-}
-
-.linkInternal(@color: @link-color-internal, @hover-color: darken(@link-color-internal, 10%)) {
-  color: @color;
-  .transition(color 200ms ease-in);
-
-  &:hover {
-    color: @hover-color;
-  }
-}
-
-.navbar-fade(@color) {
-  background-color: transparent;
-  .navbar-inner {
-
-    background-color: @color;
-  }
-  &:after {
-    content: " ";
-    min-width: 100%;
-    height: 50px;
-    margin-left: -20px;
-    margin-right: -20px;
-    #gradient > .vertical(rgba(red(@color),green(@color),blue(@color),1), 0%, rgba(red(@color),green(@color),blue(@color),0), 100%);
-  }
-}
-
-// Reusable classes (should put stuff from core.css here)
-
-.fill {
-  position: relative;
-  min-height: 100%;
-}
-
-.filler::after {
-  background-color: inherit;
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: inherit;
-  z-index: -1;  
-}
+// Reusable classes
 
 .block {
   display: block;
@@ -110,24 +57,38 @@ time {
 a.block {
   position: relative;
   display: block;
-  margin: 0 -10px;
+  margin: 10px -10px;
   padding: 10px;
   border-radius: 5px;
-
+  .link(@text-color, @text-color);
   .clearfix();
+
+  h4 {
+    margin-top: 5px;
+  }
 }
 
 a.block:hover {
   text-decoration: none;
-  background-color: lighten( @orange, 45%);
-}
-
-a[rel="internal"],
-a[rel="external"] {
-  .linkInternal();
 }
 
 // Bootstrap overrides
+
+img {
+  max-width: 100%;
+}
+
+main {
+  display: block;
+}
+
+time {
+  color: @gray-light;
+}
+
+.header {
+  margin-top: 0;
+}
 
 .btn {
   border-radius: 3px;
@@ -180,7 +141,7 @@ h1, h2, h3, h4 {
       font-family: @font-family-sans-serif;
       font-size: 20px;
       font-weight: bold;
-      .linkInternal(#454545, @link-color-internal);
+      .link(@text-color, @orange);
       .border-bottom-radius(5px);
     }
     > a:hover {
@@ -192,7 +153,7 @@ h1, h2, h3, h4 {
 #content-nav > li.active > a {
   padding-bottom: -5px;
   color: #FFF;
-  background-color: @link-color-internal;
+  background-color: @link-color;
 }
 
 #header .home {
@@ -256,15 +217,7 @@ h1, h2, h3, h4 {
 
 /* PACKAGE OVERRIDES */
 
-.package-method,
-.package-about,
-.package-work {
-  #header {
-    .navbar-fade(#FFF);
-  }
-}
-
-.package-home .masthead {
+#masthead-home {
   position: relative;
   overflow: hidden;
   max-width: 100%;
@@ -284,28 +237,32 @@ h1, h2, h3, h4 {
   }
 }
 
-.package-expertise h5,
-.package-expertise ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.package-work .project {
-  padding: 10px;
-  border: solid 1px #D8D8D8;
-  background-color: @yellow-lighter;
-  border-radius: 2px;
-  .curly-box-shadow();
-
-  img {
-    position: relative;
-    max-width: none;
-    width: 268px;
-    margin: -10px -10px 15px -10px;
+.view-expertise {
+  h5,
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
-.package-tumblrFeed {
+.view-work {
+  .project {
+    padding: 10px;
+    border: solid 1px #D8D8D8;
+    background-color: @yellow-lighter;
+    border-radius: 2px;
+    .curly-box-shadow();
+
+    img {
+      position: relative;
+      max-width: none;
+      width: 268px;
+      margin: -10px -10px 15px -10px;
+    }
+  }
+}
+/*
+.view-tumblrFeed {
   background: #121212 url('/images/tumblrfeed/background.jpg');
 
   #header {
@@ -343,6 +300,7 @@ h1, h2, h3, h4 {
     .border-bottom-radius(10px);
   }
 }
+*/
 
 #footer {
   padding-top: 30px;

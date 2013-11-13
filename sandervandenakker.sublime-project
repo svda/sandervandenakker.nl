@@ -9,6 +9,9 @@
 		},
 		{
 			"path": "/Users/sander/var/www/meteor/packages"
+		},
+		{
+			"path": "/Users/sander/var/www/meteor"
 		}
 	]
 }
