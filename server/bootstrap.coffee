@@ -1,8 +1,8 @@
 do () ->
 
-  Accounts.config({
-      forbidClientAccountCreation: true
-  });
+#  Accounts.config({
+#      forbidClientAccountCreation: true
+#  });
 
   insert = (item, i) ->
     Content.insert
