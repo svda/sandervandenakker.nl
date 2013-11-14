@@ -27,12 +27,12 @@
       "c2o-core": {
         "git": "https://github.com/click2open/c2o-core.git",
         "branch": "master",
-        "commit": "627f7f1f3a2ed92d83f4bde1db63052d50a96e45"
+        "commit": "84b7156055c8ac3c008014cb4895452d3fb6f4b8"
       },
       "c2o-module": {
         "git": "https://github.com/click2open/c2o-module.git",
         "branch": "master",
-        "commit": "fcf660d0f43facedc452df2dc766bb4249a07eac"
+        "commit": "1b95cc4cfa54f2ec44b4158cb194b13d8d3fc803"
       },
       "c2o-tracker": {
         "git": "https://github.com/click2open/c2o-tracker.git",
@@ -47,7 +47,7 @@
       "c2o-tumblrfeed": {
         "git": "https://github.com/click2open/c2o-tumblrfeed.git",
         "branch": "master",
-        "commit": "3cc3df7cd36a3b7ebdbd1f82071b095cc25674bb"
+        "commit": "18250d746789d63ac76f5ddc7397a4a3efe9cd67"
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
