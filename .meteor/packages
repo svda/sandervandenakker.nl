@@ -7,8 +7,6 @@ jquery
 backbone
 underscore
 spiderable
-accounts-password
-accounts-ui
 coffeescript
 c2o-core
 c2o-tracker
