@@ -31,6 +31,7 @@ Router.map( function () {
       return this.route.name;
     }
   });
+  /*
   this.route('404', {
     path: '*',
     data: function () {
@@ -38,5 +39,6 @@ Router.map( function () {
       return this.route.name;
     }
   })
+  */
 });
 
