@@ -14,17 +14,12 @@
 </body>
 
 <template name="main">
-  {{> sidebar}}
-  <main id="main" class="view-{{currentView}}">
-    <div id="page">
-      {{> header}}
-      <a id="sidebar-btn" class="btn visible-sm" href="#sidebar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
+  {{> menu}}
+  <div id="layout" class="view-{{currentView}}">
+    {{> header}}
+    <main id="main">
       {{renderRouter}}
-      {{> footer}}
-    </div>
-  </main>
+    </main>
+    {{> footer}}
+  </div>
 </template>

@@ -5,6 +5,7 @@
 @brand-primary:         #FF7700;
 
 @orange:                #FF7700;
+@orange-light:          lighten(@orange, 10%);
 @yellow:                #FFCC00;
 @yellow-light:          lighten(@yellow, 10%);
 @yellow-lighter:        lighten(@yellow, 43%);
@@ -78,16 +79,8 @@ img {
   max-width: 100%;
 }
 
-main {
-  display: block;
-}
-
 time {
   color: @gray-light;
-}
-
-.header {
-  margin-top: 0;
 }
 
 .btn {
@@ -115,46 +108,16 @@ h1, h2, h3, h4 {
 
 // Layout
 
-#sidebar-btn {
-  .navbar .btn-navbar;
-  position: absolute;
-  top: 15px;
-  left: 25px;
+header {
+  height: 40px;
 }
 
-#sidebar-btn .icon-bar {
-  //.navbar .btn-navbar .icon-bar;
-}
-
-#header {
+header {
   padding-left: 0;
   padding-right: 0;
-  background-color: #FFF;
+  background-color: #333;
 }
 
-#content-nav {
-  > li {
-    float: left;
-    > a {
-      position: relative;
-      padding-top: 30px;
-      font-family: @font-family-sans-serif;
-      font-size: 20px;
-      font-weight: bold;
-      .link(@text-color, @orange);
-      .border-bottom-radius(5px);
-    }
-    > a:hover {
-
-    }
-  }
-}
-
-#content-nav > li.active > a {
-  padding-bottom: -5px;
-  color: #FFF;
-  background-color: @link-color;
-}
 
 #header .home {
   content: " ";
@@ -165,10 +128,8 @@ h1, h2, h3, h4 {
   background: url('/images/home.png') center 31px no-repeat;
 }
 
-#page {
-  width: 100%;
-  height: 100%;
-  padding-top: 100px;
+#layout {
+  background-color: #fff;
 }
 
 .masthead .lead {
@@ -281,46 +242,6 @@ h1, h2, h3, h4 {
     }
   }
 }
-/*
-.view-tumblrFeed {
-  background: #121212 url('/images/tumblrfeed/background.jpg');
-
-  #header {
-    //background: none;
-  }
-
-  .post {
-    margin: 0 0 20px 0;
-    padding: 10px;
-    background-color: #F4F4F4;
-    border-radius: 5px;
-
-    a {
-      color: @orange;
-    }
-
-  }
-
-  .post.photo {
-    .caption {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-  }
-
-  a.post:hover {
-    background-color: @yellow-lighter;
-  }
-
-  .post-footer {
-    margin: 10px -10px -10px -10px;
-    padding: 5px;
-    background-color: @gray-lighter;
-    border-top: solid 1px darken(@gray-lighter, 10%);
-    .border-bottom-radius(10px);
-  }
-}
-*/
 
 #footer {
   padding-top: 30px;
@@ -374,7 +295,7 @@ h1, h2, h3, h4 {
   float: left;
 }
 .navbar .btn-navbar {
-  #gradient .vertical(@orange, darken(@orange, 5%));
+  
 }
 
 /* MASONRY */
@@ -390,30 +311,58 @@ h1, h2, h3, h4 {
   margin-bottom: 20px;
 }
 
-/* TRANSITIONS */
+/* SIDEBARS */
 
-.sliding .page {
-  .transition( all 500ms cubic-bezier(0.51, 0, 0.6, 1) 0ms);
+.sidebar-btn {
+  background: url(/images/menu.svg) center center no-repeat;
+  background-size: 24px 24px;
 }
 
-.sliding .current-page { left: 0; }
-.sliding .next-page { left: 100%; }
+.sidebar {
+  left: -250px;
+  width: 80%;
+  max-width: 250px;
+  background-color: #333;
 
-.transitioning.sliding {
-  .current-page { left: -100%; }
-  .next-page { left: 0; }
-}
-
-.fading .page {
-  .transition( all 250ms ease-in );
-}
-
-.transitioning.fading {
-  .current-page {
-    .opacity(0);
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    > li {
+      > a {
+        display: block;
+        padding: 6px 12px;
+        color: #CCC;
+        background-color: #333;
+        border-bottom: solid 1px #444;
+        font-family: @font-family-base;
+        font-size: 1em;
+        font-weight: normal;
+      }
+      > a:hover {
+        text-decoration: none;
+      }
+    }
+    > li.active > a {
+      background-color: #787878;
+      border-bottom-color: #787878
+    }
   }
-  .next-page {
-    display: none;
+}
+
+#layout,
+.sidebar {
+  .transition(all 200ms ease-in-out);
+}
+
+body.sidebar-open {
+  #layout {
+    .translate(125px, 0);
   }
 }
 
+body.menu-open {
+  #menu {
+    left: 0;
+  }
+}

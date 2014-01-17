@@ -14,9 +14,6 @@ Template.main.events({
     Router.go(slug);
     c2o.Tracker.track('Navigate to ' + slug, { context: 'menu' });
   },
-  'click #sidebar-btn': function (e) {
-    c2o.Sidebar.toggle();
-  },
   'click #page': function (e) {
     if( typeof e.target.id == 'undefined' ||
         ( e.target.id != 'sidebar-btn' &&
