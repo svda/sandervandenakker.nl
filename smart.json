@@ -19,6 +19,7 @@
     "c2o-tumblrfeed": {
       "git": "https://github.com/click2open/c2o-tumblrfeed.git",
       "branch": "master"
-    }
+    },
+    "percolatestudio-migrations": {}
   }
 }
