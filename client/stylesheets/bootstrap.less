@@ -88,6 +88,12 @@ time {
   .box-shadow(0 1px 0 rgba(0, 0, 0, 0.1));
 }
 
+.jumbotron {
+  @media (max-width: @screen-sm) {
+    padding: 30px 0;
+  }
+}
+
 .subhead {
   //margin-top: 40px;
 }
@@ -362,4 +368,22 @@ body.menu-open {
   #menu {
     left: 0;
   }
+}
+
+/* PSGER */
+
+.pager {
+  position: fixed;
+  top: 50%;
+  width: 80px;
+  height: 80px;
+  background-color: @orange;
+}
+
+#pager-prev {
+  left: 0;
+}
+
+#pager-next {
+  right: 0;
 }
