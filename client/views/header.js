@@ -4,6 +4,7 @@ Template.header.helpers({
     return id == Router.getData();
   },
   show_login: function () {
+    console.log(ROuter.route.name);
     return Router.route.name == 'login';
   },
   user: function () {
