@@ -4,8 +4,7 @@ Template.header.helpers({
     return id == Router.getData();
   },
   show_login: function () {
-    //return App.config.showLoginLink;
-    return false;
+    return Router.route.name == 'login';
   },
   user: function () {
     return Meteor.user();

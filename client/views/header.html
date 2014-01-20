@@ -1,5 +1,7 @@
 <template name="header">
   <header>
-    {{> _loginButtons}}
+    {{#if show_login}}
+      {{> _loginButtons}}
+    {{/if}}
   </header>
 </template>

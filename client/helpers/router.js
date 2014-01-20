@@ -31,6 +31,12 @@ Router.map( function () {
       return this.route.name;
     }
   });
+  this.route('login', {
+    path: '/login',
+    data: function () {
+      return this.route.name;
+    }
+  });
   /*
   this.route('404', {
     path: '*',
