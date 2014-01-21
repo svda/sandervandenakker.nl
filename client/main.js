@@ -23,6 +23,20 @@ Template.main.events({
   }
 });
 
+Template.work.rendered = function () {
+  initMasonry();
+}
+
+Template.tumblrFeedPost.rendered = function () {
+  var thread = $('<div id="disqus_thread">').appendTo('article.post');
+  var disqus_shortname = Meteor.settings.public.disqus.shortname; // required: replace example with your forum shortname
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+}
+
 Meteor.startup( function () {
 
   c2o.Module.hook(
@@ -40,16 +54,6 @@ Meteor.startup( function () {
       TL.info("Disqus loaded through view hook","Blog");
     }
   );
-
-  Template.work.rendered = function () {
-    initMasonry();
-
-    // Hammer test
-    $('.teaser').on('hold tap swipe doubletap transformstart transform transformend dragstart drag dragend swipe release', function (event) {
-      event.preventDefault();
-      console.log("Type: " + event.type + ", Fingers: " + event.touches.length + ", Direction: " + event.direction + "<br/>");
-    });
-  }
 
 });
 
