@@ -2,46 +2,48 @@ Router.configure({
   autoRender: false
 });
 
+PageController = RouteController.extend({
+  data: function () {
+    Tracker.track(this.route.name);
+    return this.route.name;
+  }
+});
+
+LoginPageController = PageController.extend({
+  load: function () {
+    window.App.state.showLoginButtons = true;
+  },
+  unload: function () {
+    window.App.state.showLoginButtons = false;
+  }
+});
+
 Router.map( function () {
   this.route('home', {
     path: '/',
-    data: function () {
-      c2o.Tracker.track(this.route.name);
-      return this.route.name;
-    }
+    controller: PageController
   });
   this.route('about', {
     path: '/about',
-    data: function () {
-      c2o.Tracker.track(this.route.name);
-      return this.route.name;
-    }
+    controller: PageController
   });
   this.route('method', {
     path: '/method',
-    data: function () {
-      c2o.Tracker.track(this.route.name);
-      return this.route.name;
-    }
+    controller: PageController
   });
   this.route('work', {
     path: '/work',
-    data: function () {
-      c2o.Tracker.track(this.route.name);
-      return this.route.name;
-    }
+    controller: PageController
   });
   this.route('login', {
     path: '/login',
-    data: function () {
-      return this.route.name;
-    }
+    controller: LoginPageController
   });
   /*
   this.route('404', {
     path: '*',
     data: function () {
-      c2o.Tracker.track(this.route.name);
+      Tracker.track(this.route.name);
       return this.route.name;
     }
   })
