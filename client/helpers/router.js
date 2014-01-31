@@ -4,7 +4,7 @@ Router.configure({
 
 PageController = RouteController.extend({
   data: function () {
-    Tracker.track(this.route.name);
+    c2o.Tracker.track(this.route.name);
     return this.route.name;
   }
 });
