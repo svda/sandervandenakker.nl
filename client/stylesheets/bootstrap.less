@@ -280,39 +280,20 @@ blockquote {
   color: inherit;
 }
 
-#footer .social .btn {
-  width: 34px;
-  text-align: center;
-  margin: 10px 10px 10px 0;
-  padding: 0px;
-  background-color: #FFF;
+#footer .social a {
+  margin-left: 5px;
   .transition(all .2s linear);
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 #footer .social i {
-  display: block;
-  width: 32px;
-  height: 32px;
-  margin: 0;
-  line-height: 32px;
-  background: url('/images/sprite_social.png') 0 0 no-repeat;
+  font-size: 36px;
   .opacity(.67);
   &:hover {
     .opacity(1);
   }
-  &.icon-linkedin {
-    background-position: 0 -32px;
-  }
-  &.icon-twitter {
-    background-position: 0 -64px;
-  }
-
-}
-
-#back-to-top {
-  position: fixed;
-  right: 0;
-  bottom: 0;
 }
 
 .navbar .btn-navbar, .navbar .btn-navbar:hover, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
