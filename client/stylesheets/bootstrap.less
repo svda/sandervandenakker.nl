@@ -1,4 +1,6 @@
 @import "/packages/c2o-core/client/stylesheets/core.lessimport";
+@import "/packages/c2o-tumblrfeed/client/stylesheets/tumblrfeed.lessimport";
+@import "icons.lessimport";
 
 @gray-lightest:         #F4F4F4;
 
@@ -49,7 +51,13 @@
   }
 }
 
-// Reusable classes
+// Reusable classes UNDER CONSTRUCTION
+
+.bl {
+  display: block;
+  color: @gray;
+  text-decoration: none;
+}
 
 .block {
   display: block;
@@ -70,6 +78,7 @@ a.block {
 }
 
 a.block:hover {
+  background-color: @gray-lightest;
   text-decoration: none;
 }
 
@@ -94,6 +103,10 @@ time {
   @media (max-width: @screen-sm) {
     padding: 30px 0;
   }
+}
+
+.header {
+  margin-top: 0;
 }
 
 .subhead {
@@ -228,11 +241,9 @@ header {
 
 .view-work {
   .project {
+    .bl;
     padding: 10px;
-    border: solid 1px #D8D8D8;
     background-color: @yellow-lighter;
-    border-radius: 2px;
-    .curly-box-shadow();
 
     img {
       position: relative;
@@ -289,6 +300,12 @@ header {
     background-position: 0 -64px;
   }
 
+}
+
+#back-to-top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
 }
 
 .navbar .btn-navbar, .navbar .btn-navbar:hover, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
