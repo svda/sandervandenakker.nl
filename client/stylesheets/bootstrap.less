@@ -30,27 +30,6 @@
   }
 }
 
-.curly-box-shadow {
-  position: relative;
-  &:before,
-  &:after {
-    position: absolute;
-    bottom: 18px;
-    left: 5px;
-    z-index: -1;
-    width: 80%;
-    height: 20%;
-    content: "";
-    .rotate(-2deg);
-    .box-shadow(0 15px 10px rgba(0, 0, 0, 0.7));
-  }
-  &:after {
-    right: 5px;
-    left: auto;
-    .rotate(2deg);
-  }
-}
-
 // Reusable classes UNDER CONSTRUCTION
 
 .bl {
