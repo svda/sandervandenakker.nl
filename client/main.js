@@ -24,62 +24,53 @@ Template.main.events({
 });
 
 Template.work.rendered = function () {
-  initMasonry();
-}
+  var $container = $('.project-row');
+  $container.isotope({
+    itemSelector: '.project'
+  });
+};
 
+var workFilter = [];
+Template.work.events({
+  'click .filter-group a': function (e) {
+    e.preventDefault();
+    $(e.currentTarget).toggleClass('selected');
+    var filter = $(e.currentTarget).data('filter');
+    if(workFilter.indexOf(filter) != -1)
+      workFilter.pop(filter);
+    else
+      workFilter.push(filter);
+    $('.project-row').isotope({ filter: workFilter.join() });
+  }
+});
+
+var commentsLoaded = false;
 Template.tumblrFeedPost.rendered = function () {
-  var thread = $('<div id="disqus_thread">').appendTo('article.post');
-  var disqus_shortname = Meteor.settings.public.disqus.shortname; // required: replace example with your forum shortname
-  (function() {
+  commentsLoaded = false;
+  $(document).on('scroll', function (e) {
+    if(isScrolledIntoView('.comments') && !commentsLoaded) {
+      commentsLoaded = true;
+      var thread = $('<div id="disqus_thread">').appendTo('article.post');
+      var disqus_shortname = Meteor.settings.public.disqus.shortname; // required: replace example with your forum shortname
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-}
-
-Meteor.startup( function () {
-
-  c2o.Module.hook(
-    'transitioner_end', function (args) {
-      $('html, body').animate({scrollTop: $('main').offset().top}, 250);
-      init_masonry();
     }
-  );
-
-  c2o.Module.hook(
-    'blog_view_post', function (args) {
-      dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://sandervandenakker.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      TL.info("Disqus loaded through view hook","Blog");
-    }
-  );
-
-});
-
-// Interface helpers
-initMasonry = function () {
-  var $container = $('.masonry');
-  var gutter = 20
-  var min_width = 270
-  $container.imagesLoaded( function() {
-    $container.masonry({
-      itemSelector : '.brick',
-      gutterWidth: gutter,
-      isAnimated: true,
-      columnWidth: function (containerWidth) {
-        var num_of_boxes = (containerWidth/min_width | 0);
-        var box_width = (((containerWidth - (num_of_boxes-1)*gutter)/num_of_boxes) | 0);
-        if(containerWidth < min_width)
-          box_width = containerWidth;
-
-        $('.brick').width(box_width);
-        return box_width;
-      }
-    });
   });
 }
 
-$('a[role=navigation]').live('click', function (e) {
+// Interface helpers
+
+isScrolledIntoView = function (elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+$('a[role=navigation]').live( 'click', function (e) {
   $('html,body').animate({scrollTop: $('body').offset().top});
 });

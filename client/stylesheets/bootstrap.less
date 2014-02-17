@@ -142,8 +142,21 @@ blockquote {
   line-height: 60px;
 }
 
-.tag.selected {
-  background-color: #121212;
+.tag-list {
+  margin-bottom: 20px;
+}
+
+.tag {
+  .label;
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: lighten(#FF6600, 30%);
+
+  &.selected {
+    background-color: #FF6600;
+  }
 }
 
 #icons-home i {
@@ -227,7 +240,11 @@ blockquote {
 
 .view-work {
   .project {
-    .bl;
+    position: relative;
+    float: left;
+    width: 270px;
+    margin-left: 20px;
+    margin-bottom: 20px;
     padding: 10px;
     background-color: @yellow-lighter;
 
@@ -280,19 +297,6 @@ blockquote {
 }
 .navbar .btn-navbar {
   
-}
-
-/* MASONRY */
-
-.masonry {
-  margin-top: 20px;
-}
-
-.masonry .brick {
-  width: 270px;
-  display: block;
-  vertical-align: top;
-  margin-bottom: 20px;
 }
 
 /* SIDEBARS */
@@ -370,5 +374,31 @@ body.menu-open {
 
 #pager-next {
   right: 0;
+}
+
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
 }
 
