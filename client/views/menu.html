@@ -1,14 +1,10 @@
 <template name="menu">
-  <div id="menu" class="sidebar">
-    <a id="menu-btn" class="sidebar-btn">
-    </a>
-    <div class="inner">
-      <ul role="navigation">
-        <li><a class="home" href="/">Home</a></li>
-        {{#each menu 'topmenu'}}
-          <li{{#if active slug}} class="active"{{/if}}><a href="{{slug}}" role="navigation">{{name}}</a></li>
-        {{/each}}
-      </ul>
-    </div>
-  </div>
+  <nav id="primary-menu" class="menu">
+    <ul role="navigation">
+      <li><a class="home" href="/">Home</a></li>
+      {{#each menu 'topmenu'}}
+        <li{{#if active slug}} class="active"{{/if}}><a href="{{slug}}" role="navigation">{{name}}</a></li>
+      {{/each}}
+    </ul>
+  </nav>
 </template>

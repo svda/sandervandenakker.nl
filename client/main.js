@@ -8,18 +8,8 @@ Template.main.helpers({
 });
 
 Template.main.events({
-  'click #content-nav a': function (e) {
-    e.preventDefault();
-    slug = $(e.currentTarget).attr('href');
-    Router.go(slug);
-    c2o.Tracker.track('Navigate to ' + slug, { context: 'menu' });
-  },
-  'click #page': function (e) {
-    if( typeof e.target.id == 'undefined' ||
-        ( e.target.id != 'sidebar-btn' &&
-          e.target.parentNode.id != 'sidebar-btn' ) ) {
-      //c2o.Sidebar.close();
-    }
+  'click #main-overlay': function (e) {
+    $('body').removeClass('menu-open');
   }
 });
 

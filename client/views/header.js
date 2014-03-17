@@ -10,3 +10,9 @@ Template.header.helpers({
     return Meteor.user();
   }
 });
+
+Template.header.events({
+  'click #primary-menu-btn': function (e) {
+      $('body').toggleClass('menu-open primary-menu-open');
+  }
+});

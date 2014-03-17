@@ -14,14 +14,15 @@
 </body>
 
 <template name="main">
-  {{> menu}}
 
   <div id="layout" class="view-{{currentView}}">
-    {{> header}}
+    {{> menu}}
+    <div id="main-overlay"></div>
     <main id="main">
+      {{> header}}
       {{renderRouter}}
+      {{> footer}}
     </main>
-    {{> footer}}
   </div>
 
 </template>
