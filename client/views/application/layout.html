@@ -1,0 +1,13 @@
+<template name="layout">
+
+  <div id="layout" class="view-{{currentView}}">
+    {{> menu}}
+    <div id="main-overlay"></div>
+    <main id="main">
+      {{> header}}
+      {{yield}}
+      {{> footer}}
+    </main>
+  </div>
+
+</template>
