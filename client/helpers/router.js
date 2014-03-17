@@ -1,3 +1,7 @@
+SEO.configure({
+  baseTitle: ' - Sander van den Akker'
+});
+
 Router.configure({
   layoutTemplate: 'layout',
   loadingTemplate: 'loading'
@@ -41,27 +45,34 @@ WorkPageController = PageController.extend({
 Router.map( function () {
   this.route('home', {
     path: '/',
-    controller: PageController
+    controller: PageController,
+    before: function () {
+      SEO.title( 'Web consultant and developer in Amsterdam' );
+      SEO.description( 'The increased complexity of the internet makes every large web project a piece of art. I am trying to master the art of web development. This means I care about my craft, and I think about my work.' );
+    }
   });
   this.route('about', {
     path: '/about',
     controller: PageController,
     before: function () {
-      document.title = ('About me - Sander van den Akker');
+      SEO.title( 'About me' );
+      SEO.description( '' );
     }
   });
   this.route('method', {
     path: '/method',
     controller: PageController,
     before: function () {
-      document.title = ('The method I use - Sander van den Akker');
+      SEO.title( 'The method I use' );
+      SEO.description( '' );
     }
   });
   this.route('work', {
     path: '/work',
     controller: PageController,
     before: function () {
-      document.title = ('My track record - Sander van den Akker');
+      SEO.title( 'My track record' );
+      SEO.description( '' );
     }
   });
   this.route('project', {

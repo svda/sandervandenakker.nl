@@ -32,6 +32,6 @@ isScrolledIntoView = function (elem) {
     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
-$('a[role=navigation]').live( 'click', function (e) {
+$('a[role=navigation]').on( 'click', function (e) {
   $('html,body').animate({scrollTop: $('body').offset().top});
 });

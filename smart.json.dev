@@ -1,11 +1,10 @@
 {
-  "meteor": {
-    "git": "https://github.com/meteor/meteor.git",
-    "branch": "master"
-  },
   "packages": {
     "c2o-core": {
       "path": "/usr/local/var/www/meteor/packages/c2o-core"
+    },
+    "c2o-seo": {
+      "path": "/usr/local/var/www/meteor/packages/c2o-seo"
     },
     "c2o-module": {
       "path": "/usr/local/var/www/meteor/packages/c2o-module"
@@ -21,6 +20,7 @@
     },
     "c2o-development": {
       "path": "/usr/local/var/www/meteor/packages/c2o-development"
-    }
+    },
+    "percolatestudio-migrations": {}
   }
 }

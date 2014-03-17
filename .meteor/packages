@@ -18,6 +18,6 @@ standard-app-packages
 iron-router
 less
 percolatestudio-migrations
-intercom
 accounts-password
 accounts-ui
+c2o-seo
