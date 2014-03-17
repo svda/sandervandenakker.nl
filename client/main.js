@@ -1,18 +1,6 @@
 c2o.Tracker.register(GoogleAnalyticsTracker, {account: 'UA-5140591-3'})
 //c2o.Tracker.register(MixpanelTracker, {account: 'b20401a9f40c03a56f2a135dfb553a99'})
 
-Template.main.helpers({
-  currentView: function () {
-    return Router.getData();
-  }
-});
-
-Template.main.events({
-  'click #main-overlay': function (e) {
-    $('body').removeClass('menu-open');
-  }
-});
-
 var commentsLoaded = false;
 Template.tumblrFeedPost.rendered = function () {
   commentsLoaded = false;
@@ -33,8 +21,6 @@ Template.tumblrFeedTeaser.rendered = function () {
     $('.list.animated').addClass('animate-in');
   });
 }
-
-// Interface helpers
 
 isScrolledIntoView = function (elem) {
     var docViewTop = $(window).scrollTop();

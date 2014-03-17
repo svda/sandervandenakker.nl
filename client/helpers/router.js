@@ -1,5 +1,6 @@
 Router.configure({
-  autoRender: false
+  layoutTemplate: 'layout',
+  loadingTemplate: 'loading'
 });
 
 PageController = RouteController.extend({

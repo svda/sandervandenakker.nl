@@ -10,20 +10,3 @@
 
 </head>
 
-<body>
-  {{> main}}
-</body>
-
-<template name="main">
-
-  <div id="layout" class="view-{{currentView}}">
-    {{> menu}}
-    <div id="main-overlay"></div>
-    <main id="main">
-      {{> header}}
-      {{renderRouter}}
-      {{> footer}}
-    </main>
-  </div>
-
-</template>
