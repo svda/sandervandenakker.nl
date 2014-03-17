@@ -13,27 +13,6 @@ Template.main.events({
   }
 });
 
-Template.work.rendered = function () {
-  var $container = $('.project-row');
-  $container.isotope({
-    itemSelector: '.project'
-  });
-};
-
-var workFilter = [];
-Template.work.events({
-  'click .filter-group a': function (e) {
-    e.preventDefault();
-    $(e.currentTarget).toggleClass('selected');
-    var filter = $(e.currentTarget).data('filter');
-    if(workFilter.indexOf(filter) != -1)
-      workFilter.pop(filter);
-    else
-      workFilter.push(filter);
-    $('.project-row').isotope({ filter: workFilter.join() });
-  }
-});
-
 var commentsLoaded = false;
 Template.tumblrFeedPost.rendered = function () {
   commentsLoaded = false;
@@ -46,6 +25,12 @@ Template.tumblrFeedPost.rendered = function () {
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }
+  });
+}
+
+Template.tumblrFeedTeaser.rendered = function () {
+  Meteor.defer(function() {
+    $('.list.animated').addClass('animate-in');
   });
 }
 

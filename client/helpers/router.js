@@ -18,6 +18,25 @@ LoginPageController = PageController.extend({
   }
 });
 
+ProjectPageController = PageController.extend({
+  template: 'project',
+  data: function () {
+    Session.set('project', this.params.slug);
+  },
+  unload: function () {
+    Session.set('project', null);
+  }
+});
+
+WorkPageController = PageController.extend({
+  data: function () {
+    Session.set('work_filter', this.params.filter);
+  },
+  unload: function () {
+    Session.set('work_filter', null);
+  }
+});
+
 Router.map( function () {
   this.route('home', {
     path: '/',
@@ -25,15 +44,28 @@ Router.map( function () {
   });
   this.route('about', {
     path: '/about',
-    controller: PageController
+    controller: PageController,
+    before: function () {
+      document.title = ('About me - Sander van den Akker');
+    }
   });
   this.route('method', {
     path: '/method',
-    controller: PageController
+    controller: PageController,
+    before: function () {
+      document.title = ('The method I use - Sander van den Akker');
+    }
   });
   this.route('work', {
     path: '/work',
-    controller: PageController
+    controller: PageController,
+    before: function () {
+      document.title = ('My track record - Sander van den Akker');
+    }
+  });
+  this.route('project', {
+    path: '/project/:slug',
+    controller: ProjectPageController
   });
   this.route('login', {
     path: '/login',
