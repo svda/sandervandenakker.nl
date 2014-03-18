@@ -10,7 +10,6 @@ Router.configure({
 PageController = RouteController.extend({
   data: function () {
     c2o.Tracker.track(this.route.name);
-    return this.route.name;
   }
 });
 
