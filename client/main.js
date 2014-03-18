@@ -1,6 +1,10 @@
 c2o.Tracker.register(GoogleAnalyticsTracker, {account: 'UA-5140591-3'})
 //c2o.Tracker.register(MixpanelTracker, {account: 'b20401a9f40c03a56f2a135dfb553a99'})
 
+SEO.configure({
+  baseTitle: ' - Sander van den Akker'
+});
+
 var commentsLoaded = false;
 Template.tumblrFeedPost.rendered = function () {
   commentsLoaded = false;
