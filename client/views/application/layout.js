@@ -1,7 +1,7 @@
 Template.layout.helpers({
   currentView: function () {
-    console.log(Router.getData());
-    return Router.getData();
+    if( Router.current() !== null )
+      return name = Router.current().route.name;
   }
 });
 
