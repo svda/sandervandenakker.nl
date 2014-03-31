@@ -3,7 +3,7 @@
     <ul role="navigation">
       <li><a class="home" href="/">Home</a></li>
       {{#each menu 'topmenu'}}
-        <li{{#if active slug}} class="active"{{/if}}><a href="{{slug}}" role="navigation">{{name}}</a></li>
+        <li><a href="{{slug}}" role="navigation">{{name}}</a></li>
       {{/each}}
     </ul>
   </nav>

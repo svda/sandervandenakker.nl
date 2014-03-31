@@ -1,5 +1,6 @@
 Template.layout.helpers({
   currentView: function () {
+    console.log(Router.getData());
     return Router.getData();
   }
 });
