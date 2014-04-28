@@ -1,5 +1,6 @@
 @import "/packages/c2o-core/client/stylesheets/core.lessimport";
-@import "/packages/c2o-tumblrfeed/client/stylesheets/tumblrfeed.lessimport";
+@import "/packages/c2o-tumblrfeed/client/stylesheets/tumblrfeed.import.less";
+@import "/packages/c2o-gpslogger/client/stylesheets/gpslogger.import.less";
 @import "icons.lessimport";
 
 @gray-lightest:         #F4F4F4;
@@ -13,7 +14,7 @@
 @yellow-lighter:        lighten(@yellow, 43%);
 
 @link-color:            @orange;
-@btn-primary-bg:        #FF6600;
+@btn-primary-bg:        @orange;
 @btn-primary-bg-hl:     darken(@btn-primary-bg, 10%);
 
 @sidebar-color:         #CCCCCC;
@@ -40,6 +41,25 @@
 
   &:hover {
     color: @hover-color;
+  }
+}
+
+.btn-inverse {
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  padding: 10px;
+  line-height: 1;
+  text-decoration: none;
+  color: @btn-primary-bg;
+  border: solid 1px @btn-primary-bg;
+  border-radius: 3px;
+
+  &:hover,
+  &.selected {
+    text-decoration: none;
+    color: #fff;
+    background-color: @btn-primary-bg;
   }
 }
 
@@ -124,7 +144,7 @@ blockquote {
 // Layout
 
 body {
-
+  
 }
 
 #loading {
@@ -145,19 +165,20 @@ body {
   overflow: hidden;
 }
 
-#main-overlay {
+#washi {
   .cover;
   cursor: pointer;
 }
 
-#main {
+#shoji {
   .cover;
-  background-color: #fff;
+  background-color: white;
   overflow-y: auto;
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px 3px;
   .scale( 1 );
   .transition( all 400ms cubic-bezier(0.175, 0.885, 0.335, 1.05) );
   .backface-visibility( hidden );
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu-btn {
@@ -205,6 +226,10 @@ body {
   }
 }
 
+.back-btn {
+  .btn-inverse;
+}
+
 @media (min-width: @screen-sm-min) {
   .menu ul > li > a {
     font-size: 36px;
@@ -212,11 +237,11 @@ body {
 }
 
 body.menu-open {
-  #main-overlay {
+  #washi {
     z-index: 1;
   }
-  #main-overlay,
-  #main {
+  #washi,
+  #shoji {
     -webkit-transform: translate3d(40%, 0, 0) scale(0.85);
     -moz-transform: translate3d(40%, 0, 0) scale(0.85);
     -o-transform: translate3d(40%, 0, 0) scale(0.85);
@@ -241,23 +266,7 @@ body.menu-open {
 }
 
 .tag {
-  display: inline-block;
-  font-size: 14px;
-  margin-bottom: 5px;
-  padding: 10px;
-  line-height: 1;
-  color: @orange;
-  border: solid 1px @orange;
-  border-radius: 3px;
-
-  &:hover {
-    color: @orange;
-  }
-
-  &.selected {
-    color: #fff;
-    background-color: @orange;
-  }
+  .btn-inverse;
 }
 
 #icons-home i {
@@ -425,7 +434,7 @@ body.menu-open {
 }
 
 .view-work {
-  #main {
+  #shoji {
     background-color: #f4f4f4;
     //background: url(/images/bg_work.jpg) center center no-repeat;
     //background-size: cover;
@@ -476,4 +485,12 @@ body.menu-open {
 
 .list.animated.animate-in > .post:nth-child(n+3) {
   .transition-delay( 150ms );
+}
+
+.transition-start {
+  .opacity(0);
+}
+
+.transition-end {
+  .opacity(1);
 }

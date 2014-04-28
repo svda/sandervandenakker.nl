@@ -37,5 +37,5 @@ isScrolledIntoView = function (elem) {
 }
 
 $('a[role=navigation]').on( 'click', function (e) {
-  $('html,body').animate({scrollTop: $('body').offset().top});
+  //$('html,body').animate({scrollTop: $('body').offset().top});
 });
