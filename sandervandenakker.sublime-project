@@ -2,16 +2,10 @@
 	"folders":
 	[
 		{
-			"path": "/Users/sander/var/www/sandervandenakker.nl"
+			"path": "/usr/local/var/www/sandervandenakker.nl"
 		},
 		{
-			"path": "/usr/local/var/www/meteor/master"
-		},
-		{
-			"path": "/Users/sander/var/www/meteor/packages"
-		},
-		{
-			"path": "/Users/sander/var/www/meteor"
+			"path": "/usr/local/var/meteor"
 		}
 	]
 }

@@ -1,5 +1,5 @@
-@import "/packages/c2o-core/client/stylesheets/core.lessimport";
-@import "/packages/c2o-tumblrfeed/client/stylesheets/tumblrfeed.import.less";
+//@import "/packages/c2o:core/client/stylesheets/core.lessimport";
+//@import "/packages/c2o:tumblrfeed/client/stylesheets/tumblrfeed.import.less";
 @import "icons.lessimport";
 
 @gray-lightest:         #F4F4F4;
@@ -83,7 +83,7 @@ a.block {
   .link(@text-color, @text-color);
   .clearfix();
 
-  h4 {
+  h3 {
     margin-top: 5px;
   }
 }
@@ -109,6 +109,7 @@ time {
 }
 
 .jumbotron {
+  margin-bottom: 20px;
   color: #EFEFEF;
   background-color: #333;
   @media (max-width: @screen-sm) {
@@ -304,7 +305,7 @@ body.menu-open {
   padding-bottom: 1000px;
   border-top: 1px solid #E5E5E5;
   background-color: whiteSmoke;
-  color: @gray-light;
+  color: @gray;
 
   section {
     padding-left: 10px;
@@ -429,6 +430,12 @@ body.menu-open {
   ul {
     margin-top: 0;
     margin-bottom: 0;
+  }
+}
+
+.view-about {
+  .toolkit-logo {
+    max-width: 100px;
   }
 }
 

@@ -1,0 +1,4 @@
+- Keyboard mapping / shortcuts
+- SEO meta: http://manuel-schoebel.com/blog/meteor-and-seo
+- Klanten maatschappelijk verantwoord, groen.
+- GA package fixen, activeren in main.js

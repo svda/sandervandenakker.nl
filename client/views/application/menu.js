@@ -3,3 +3,7 @@ Template.menu.events({
     $('body').removeClass('menu-open');
   }
 });
+
+Handlebars.registerHelper('menu', function (name) {
+  //return MenuModel.get(name);
+});
