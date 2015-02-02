@@ -1,3 +1,4 @@
+- Create Ubuntu instance for MUP and switch to that
 - Keyboard mapping / shortcuts
 - SEO meta: http://manuel-schoebel.com/blog/meteor-and-seo
 - Klanten maatschappelijk verantwoord, groen.

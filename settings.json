@@ -1,1 +1,16 @@
-{ "tumblrfeed" : { "url" : "svdakker.tumblr.com", "id" : "FHJV4tE0FX99WehfEuTmWVJ1xWgusAk1mAtontyKYEHlWx9tbe" }, "intercom" : { "secret" : "test" }, "public" : { "intercom" : { "id" : "3c2d182b525f54d70296933974225d7ad48cf14e" }, "disqus" : { "shortname" : "sandervandenakker" } } }
+{
+  "tumblrfeed" : {
+    "url" : "svdakker.tumblr.com",
+    "id" : "FHJV4tE0FX99WehfEuTmWVJ1xWgusAk1mAtontyKYEHlWx9tbe"
+  },
+  "public" : {
+    "tumblrfeed": {
+      "basePath" : "/lab",
+      "title": "Lab",
+      "lead": "Where I think about my work."
+    },
+    "disqus" : {
+      "shortname" : "sandervandenakker"
+    }
+  }
+}
