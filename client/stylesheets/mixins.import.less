@@ -1,0 +1,22 @@
+/**
+ * This file contains reusable less classes that can be mixed into another style definition.
+ */
+
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+}
+
+.link(@color: @link-color, @hover-color: darken(@link-color, 10%)) {
+  color: @color;
+  .transition(color 200ms ease-in);
+
+  &:hover {
+    color: @hover-color;
+  }
+}

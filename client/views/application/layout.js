@@ -1,7 +1,15 @@
 Template.layout.helpers({
-  currentView: function () {
-    if( Router.current() !== null )
-      return name = Router.current().route.name;
+  /**
+   * Blaze automatically maps these to html attributes in the layout template.
+   */
+  attributes: function () {
+    var attributes = {
+      class: ''
+    };
+    var route = Router && Router.current() && Router.current().route;
+    if (route)
+      attributes.class += 'view-' + route.getName();
+    return attributes;
   }
 });
 

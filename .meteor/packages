@@ -9,10 +9,11 @@ accounts-password
 accounts-ui
 iron:router
 multiply:iron-router-progress
-momentjs:moment
 spiderable
+momentjs:moment
 gadicohen:phantomjs
 nemo64:bootstrap
 
+nbh:seo
 nbh:usage-tracker
 nbh:tumblrfeed

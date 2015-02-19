@@ -4,6 +4,9 @@
     "id" : "FHJV4tE0FX99WehfEuTmWVJ1xWgusAk1mAtontyKYEHlWx9tbe"
   },
   "public" : {
+    "seo": {
+      "baseTitle": " - Sander van den Akker"
+    },
     "tumblrfeed": {
       "basePath" : "/lab",
       "title": "Lab",
