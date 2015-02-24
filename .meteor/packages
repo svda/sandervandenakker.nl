@@ -8,7 +8,6 @@ less
 accounts-password
 accounts-ui
 iron:router
-multiply:iron-router-progress
 spiderable
 momentjs:moment
 gadicohen:phantomjs
