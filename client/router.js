@@ -45,7 +45,7 @@ Router.route('home', {
 Router.route('about', {
   controller: PageController,
   onBeforeAction: function () {
-    SEO.title( 'About me' );
+    SEO.title( 'About me');
     SEO.description( '' );
     this.next();
   }

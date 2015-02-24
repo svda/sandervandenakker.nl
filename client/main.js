@@ -1,9 +1,5 @@
 UsageTracker.register(GoogleAnalytics, {account: 'UA-5140591-3'});
 
-//SEO.configure({
-//  baseTitle: ' - Sander van den Akker'
-//});
-
 if(Template['tumblrFeedPost']) {
   var commentsLoaded = false;
   Template.tumblrFeedPost.rendered = function () {
