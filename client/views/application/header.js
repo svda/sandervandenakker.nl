@@ -13,6 +13,7 @@ Template.header.helpers({
 
 Template.header.events({
   'click #primary-menu-btn': function (e) {
-      $('body').toggleClass('menu-open primary-menu-open');
+    $('.menu.animated').addClass('animate-in');
+    $('body').toggleClass('menu-open primary-menu-open');
   }
 });

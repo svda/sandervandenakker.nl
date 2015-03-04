@@ -1,22 +1,13 @@
-Template.work.rendered = function () {
-  var $container = $('.project-row');
-  $container.isotope({
-    itemSelector: '.project'
-  });
-};
-
-var workFilter = [];
+var workFilter = new UI.Filter({
+  triggerSelector: '.filter-group a',
+  targetSelector: '.project'
+});
 
 Template.work.events({
   'click .filter-group a': function (e) {
     e.preventDefault();
-    $(e.currentTarget).toggleClass('selected');
-    $('.project').addClass('hidden');
-    var filter = $(e.currentTarget).data('filter');
-    if(workFilter.indexOf(filter) != -1)
-      workFilter.splice(workFilter.indexOf(filter), 1);
-    else
-      workFilter.push(filter);
-    $('.project' + workFilter.join()).removeClass('hidden');
+    var value = $(e.currentTarget).data('filter');
+    workFilter.update(value);
+    UI.hooks.publish('click_filter');
   }
 });

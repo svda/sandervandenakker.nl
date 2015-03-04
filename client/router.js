@@ -4,6 +4,10 @@ Router.configure({
   notFoundTemplate: '404'
 });
 
+Router.onAfterAction( function () {
+  UI.hooks.publish('router_route');
+});
+
 PageController = RouteController.extend({
   onRun: function () {
     UsageTracker.track(this.route.name);

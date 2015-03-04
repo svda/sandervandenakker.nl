@@ -7,12 +7,16 @@ meteor-platform
 less
 accounts-password
 accounts-ui
-iron:router
+fastclick
 spiderable
+iron:router
 momentjs:moment
 gadicohen:phantomjs
 nemo64:bootstrap
+meteorhacks:kadira
 
 nbh:seo
 nbh:usage-tracker
 nbh:tumblrfeed
+nbh:ui-filter
+nbh:disqus
