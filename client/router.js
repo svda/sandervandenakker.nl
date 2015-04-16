@@ -41,7 +41,7 @@ Router.route('home', {
   controller: PageController,
   onBeforeAction: function () {
     //SEO.title( 'Web consultant and developer in Amsterdam' );
-    SEO.description( 'Professional development services for web applications.' );
+    SEO.description( 'Web consultant and developer based in Amsterdam who can help you define, design, develop, and maintain your app or website. Specialized in Meteor.' );
     this.next();
   }
 });
@@ -50,7 +50,7 @@ Router.route('about', {
   controller: PageController,
   onBeforeAction: function () {
     SEO.title( 'About me');
-    SEO.description( '' );
+    SEO.description( 'I\'m a web consultant and developer based in Amsterdam, The Netherlands. I believe web development is an art, and I try to master it. This means I care about my craft, and I think about my work.' );
     this.next();
   }
 });
@@ -58,8 +58,8 @@ Router.route('about', {
 Router.route('work', {
   controller: PageController,
   onBeforeAction: function () {
-    SEO.title( 'My track record' );
-    SEO.description( '' );
+    SEO.title( 'My work (portfolio)' );
+    SEO.description( 'A list of projects I worked on.' );
     this.next();
   }
 });
@@ -78,7 +78,7 @@ Router.route('services', {
   controller: PageController,
   onBeforeAction: function () {
     SEO.title( 'Services' );
-    SEO.description( '' );
+    SEO.description( 'I can help you define, design, develop, and maintain your app or website. These are the services I provide.' );
     this.next();
   }
 });
